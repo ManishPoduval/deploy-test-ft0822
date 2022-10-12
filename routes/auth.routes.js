@@ -99,5 +99,10 @@ router.get('/search', checkUser, (req, res) => {
         res.render('auth/search.hbs', {loggedInUser: req.session.loggedInUser })
 })
 
+router.get('/logout', (req, res) => {
+    req.session.destroy();
+    res.redirect('/logoutpage')
+})
+
 
 module.exports = router;
